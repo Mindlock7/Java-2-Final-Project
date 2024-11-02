@@ -1,14 +1,20 @@
+//Logging Stuff
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+//import org.apache.logging.log4j.Logger;
+
 public class Main {
     public static void main(String[] args)
     {
-        //Team Stuff
+        //Logger object
+        final Logger log = LogManager.getLogger(Main.class.getName());
 
         //Kevin's edit
         //Nothing of value but comment
         //Here to demonstrate a push
 
         try {
-           System.out.println("Hello World!");
+           log.debug("Hello World!");
         }
         catch (Exception ex) {
             System.out.println("An Exception Has Occured...");
