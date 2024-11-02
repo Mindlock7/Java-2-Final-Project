@@ -10,7 +10,7 @@ public class Main {
         final Logger log = LogManager.getLogger(Main.class.getName());
 
         //Kevin's edit
-        //Nothing of value but comment
+        //Nothing of value but comments
         //Here to demonstrate a push
 
         try {
