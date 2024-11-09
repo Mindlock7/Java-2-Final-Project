@@ -45,11 +45,5 @@ public class Main {
             System.out.println("Hello world!!!!!");
             log.debug("Hello World!");
         }
-        catch (Exception ex) {
-            System.out.println("An Exception Has Occured...");
-        }
-        finally {
-            //Clear scanners and other things
-        }
     }
 }
