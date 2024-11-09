@@ -14,12 +14,21 @@ public class Main {
         //Nothing of value but comments
         //Here to demonstrate a push
         try {
+            //Parser
+            NounVerbParser UserInputHandler = new NounVerbParser();
+
+            //Variable to make sure loop quits
             boolean running = true;
+
+            //Telling when its ready to go
             log.debug("Starting Up!");
 
             //Game loop
             while (running) {
-                String GivenData = UserInput.next();
+                //UserInput
+                String GivenData = UserInput.nextLine();
+
+                UserInputHandler.Parse(GivenData);
 
                 if (GivenData.equalsIgnoreCase("exit")) {
                     log.debug("Shutting Down!");
