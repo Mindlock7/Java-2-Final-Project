@@ -1,7 +1,8 @@
 //Logging Stuff
 import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import java.util.Scanner;
+
+//import org.apache.logging.log4j.Logger;
 
 public class Main {
     //Logger object
@@ -41,6 +42,14 @@ public class Main {
         }
         finally {
             UserInput.close();
+            System.out.println("Hello world!!!!!");
+            log.debug("Hello World!");
+        }
+        catch (Exception ex) {
+            System.out.println("An Exception Has Occured...");
+        }
+        finally {
+            //Clear scanners and other things
         }
     }
 }
