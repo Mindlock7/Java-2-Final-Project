@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="log4j-api-2.17.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/apache-log4j-2.17.2-bin/apache-log4j-2.17.2-bin/log4j-api-2.17.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/apache-log4j-2.17.2-bin/apache-log4j-2.17.2-bin/log4j-core-2.17.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/Downloads/apache-log4j-2.17.2-bin/apache-log4j-2.17.2-bin/log4j-api-2.17.2-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/apache-log4j-2.17.2-bin/apache-log4j-2.17.2-bin/log4j-core-2.17.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/src" />
+      <root url="file://$PROJECT_DIR$" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$" recursive="false" type="SOURCES" />
+  </library>
+</component>
