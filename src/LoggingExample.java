@@ -7,11 +7,5 @@ public class LoggingExample {
     final static Logger log =
             LogManager.getLogger(LoggingExample.class.getName());
 
-    public static void main(String[] args) {
-
-        log.debug("Hello World!");
-        log.info("Hello World, Again!");
-
-    }
 
 }

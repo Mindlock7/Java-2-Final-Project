@@ -31,4 +31,3 @@ public interface RoomTemplate {
     // Needed for items that can't be picked up, but just looked at
     public void roomInteractables();
 }
-
