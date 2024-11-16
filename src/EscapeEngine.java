@@ -1,10 +1,36 @@
+//Logging Stuff
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import java.util.Scanner;
+
 public class EscapeEngine {
+     //Logger object
+     final static Logger log = LogManager.getLogger(EscapeRoomGame.class.getName());
+     static Scanner UserInput = new Scanner(System.in);
+
     public void run() {
-        // Game logic would go here
-        // Taking user input
-        // Processing commands
-        // Updating game state
-        System.out.println("Game logic running...?");
-        // Placeholder for game logic implementation
+        //Parser
+        NounVerbParser UserInputHandler = new NounVerbParser();
+        //Variable to make sure loop quits
+        boolean running = true;
+        // Creating objects
+        LivingRoom livingRoom = new LivingRoom();
+
+        // Game logic
+        while (running) {
+            //UserInput
+            String GivenData = UserInput.nextLine();
+
+            //Processing commands
+            UserInputHandler.Parse(GivenData);
+
+            //Exitting if necessary
+            if (GivenData.equalsIgnoreCase("exit")) {
+                log.debug("Shutting Down!");
+                running = false;
+            }
+        }
+
+        System.out.println("Game shutting down");
     }
 }
