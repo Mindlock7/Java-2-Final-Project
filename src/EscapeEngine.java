@@ -15,6 +15,9 @@ public class EscapeEngine {
         boolean running = true;
         // Creating objects
         LivingRoom livingRoom = new LivingRoom();
+        //Creating key (check and use methods can be tested)
+        Key key1 = new Key(1, "This isn't a normal key");
+
 
         // Game logic
         while (running) {
