@@ -1,4 +1,6 @@
-public class Key {
+import java.util.Comparator;
+
+public class Key implements Comparable<Key> {
     //General Item Properties
     private Boolean MultipleUses = false; //Incase you want this to break multiple walls or open many locks
 
@@ -14,30 +16,37 @@ public class Key {
     //Desciption of the item
     private String Description;
 
+    //Name to show in inventory
+    private String ItemName = "Random Key";
+
     //UnlockID and description key creation
-    public Key(Integer unlockId, String description) {
+    public Key(Integer unlockId, String description, String itemName) {
         UnlockId = unlockId;
         Description = description;
+        ItemName = itemName;
     }
 
-    public Key(Integer unlockId, String description, Boolean multipleUses) {
+    public Key(Integer unlockId, String description, String itemName, Boolean multipleUses) {
         UnlockId = unlockId;
         Description = description;
+        ItemName = itemName;
         MultipleUses = multipleUses;
     }
 
     //Everything key creation
-    public Key(Integer unlockId, String description, String unlockText, String noUnlockText, String notUnlockableText) {
+    public Key(Integer unlockId, String description, String itemName, String unlockText, String noUnlockText, String notUnlockableText) {
         UnlockId = unlockId;
         Description = description;
+        ItemName = itemName;
         UnlockText = unlockText;
         NoUnlockText = noUnlockText;
         NotUnlockableText = notUnlockableText;
     }
 
-    public Key(Integer unlockId, String description, String unlockText, String noUnlockText, String notUnlockableText, Boolean multipleUses) {
+    public Key(Integer unlockId, String description, String itemName, String unlockText, String noUnlockText, String notUnlockableText, Boolean multipleUses) {
         UnlockId = unlockId;
         Description = description;
+        ItemName = itemName;
         UnlockText = unlockText;
         NoUnlockText = noUnlockText;
         NotUnlockableText = notUnlockableText;
@@ -45,9 +54,28 @@ public class Key {
     }
 
 
-    //Methods
-    public void Check() {
-        System.out.println(Description);
+    //ItemName Methods
+    public void setItemName(String itemName) {
+        ItemName = itemName;
+    }
+
+    public String getItemName() {
+        return ItemName;
+    }
+
+    //UnlockId Methods
+    public void setUnlockId(Integer unlockId) {
+        UnlockId = unlockId;
+    }
+
+    public Integer getUnlockId() {
+        return UnlockId;
+    }
+
+
+    //Other Methods
+    public String Check() {
+        return Description;
     }
 
     public boolean Use() {
@@ -56,4 +84,17 @@ public class Key {
         System.out.println(UnlockText);
         return true;
     }
+
+    @Override
+    public int compareTo(Key k) {
+        return this.ItemName.compareTo(k.getItemName());
+    }
+
+    public static Comparator<Key> UnlockIdCompare = new Comparator<Key>() {
+
+        @Override
+        public int compare(Key k1, Key k2) {
+            return k1.getUnlockId() - k2.getUnlockId();
+        }
+    };
 }
