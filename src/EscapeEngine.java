@@ -10,7 +10,7 @@ public class EscapeEngine {
 
     public void run() {
         //Parser
-        NounVerbParser UserInputHandler = new NounVerbParser();
+        VerbNounParser UserInputHandler = new VerbNounParser();
         //Variable to make sure loop quits
         boolean running = true;
         // Creating objects

@@ -25,6 +25,7 @@ public class EscapeRoomGame {
         // Generate and display the introductory message using MessageHandler
         MessageHandler messageHandler = new MessageHandler(locale, localTime);
         System.out.println(messageHandler.getIntroMessage());
+        System.out.println(messageHandler.getGameIntro());
 
         // Initialize EscapeEngine to run the game logic
         EscapeEngine engine = new EscapeEngine();
