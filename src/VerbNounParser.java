@@ -16,11 +16,11 @@ public class VerbNounParser {
                 System.out.println("Today is Sunday");
                 break;
             case "help":
-                System.out.println("The commands for the game:" +
-                        "MOVE - Allows you to move into connected rooms" +
-                        "LOOK - Look at an item in the room to gain a better description" +
-                        "TAKE - Attempt to take an item from the room and put it in your inventory" +
-                        "INVENTORY - Shows what items are in your inventory");
+                System.out.println("The commands for the game:\n" +
+                        "MOVE - Allows you to move into connected rooms\n" +
+                        "LOOK - Look at an item in the room to gain a better description\n" +
+                        "TAKE - Attempt to take an item from the room and put it in your inventory\n" +
+                        "INVENTORY - Shows what items are in your inventory\n");
                 break;
             case "look":
                 System.out.println("Today is Sunday");
