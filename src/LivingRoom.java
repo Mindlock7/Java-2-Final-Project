@@ -9,7 +9,6 @@ public class LivingRoom implements RoomTemplate{
     // Stores room items
     List<String> roomItemsList = new ArrayList<>();
 
-    // Once room layout is decided, the connected rooms will be written here
     // Method will return the room connections list
     @Override
     public List<String> connectedRooms()
@@ -34,11 +33,13 @@ public class LivingRoom implements RoomTemplate{
                 "no light is shining through the cracks, suggesting it's night outside of the " +
                 "house. Against another wall is a bookshelf, with regular wall shelving on each " +
                 "side of it. The bookshelf is full of books, and the shelves are lined with " +
-                "trinkets and picture frames.");
+                "trinkets and picture frames. Besides the bookshelf is a door, leading to what " +
+                "appears to be a master bedroom." +
+                " " +
+                "Use 'HELP' command for commands");
     }
 
-    // Once room items are decided, they will be written here
-    // Method will return the room items list
+    // Method returns the room items list
     @Override
     public List<String> roomItems()
     {
