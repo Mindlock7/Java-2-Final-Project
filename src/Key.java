@@ -1,6 +1,6 @@
 import java.util.Comparator;
 
-public class Key implements Comparable<Key> {
+public class Key implements Comparable<Key>, Items {
     //General Item Properties
     private Boolean MultipleUses = false; //Incase you want this to break multiple walls or open many locks
 
