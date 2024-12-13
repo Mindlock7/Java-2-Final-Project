@@ -1,7 +1,12 @@
 //Logging Stuff
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.HashMap;
 
 public class EscapeEngine {
      //Logger object
@@ -10,14 +15,19 @@ public class EscapeEngine {
 
     public void run() {
         //Parser
-        NounVerbParser UserInputHandler = new NounVerbParser();
+        VerbNounParser UserInputHandler = new VerbNounParser();
+
+        //Inventory (temp)
+        List<Items> Inventory = new ArrayList<>();
+
         //Variable to make sure loop quits
         boolean running = true;
         // Creating objects
         LivingRoom livingRoom = new LivingRoom();
         //Creating key (check and use methods can be tested)
         Key key1 = new Key(1, "This isn't a normal key", "Yellow Key");
-
+        //Putting it in bearskin rug
+        BearRug bearRug = new BearRug();
 
         // Game logic
         while (running) {
