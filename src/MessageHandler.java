@@ -55,10 +55,39 @@ public final class MessageHandler {
             // Constructs the message in English if the locale is anything other than "es"
             message = "Welcome to the Escape Room adventure. \n" //Here we add our introductory message to the game.
                     + getTimeOfDayGreeting(locale, localTime)   // Adds a greeting based on the time
-                    + "Explore the rooms, solve puzzles, and find your way to escape."; //Can Obvi change, just a start.
+                    + "Explore the rooms, solve puzzles, and find your way to escape.\n"; //Can Obvi change, just a start.
         }
 
         return message; // Returns the introductory message
+    }
+
+    // Introductory lore to the game to help users get started
+    public String getGameIntro(){
+        String message;
+        message = "As you  come to, a feeling of soreness encapsulates your body. Your eyes flutter\n" +
+                "open,  seeing the cool wooden  floor  you’ve   been  laid down  upon.  You don’t\n" +
+                "remember  much,  other than  going  out last night to meet  friends before being\n" +
+                "stopped  on the way by a  hooded man,  asking   if  you wanted  to  play a game.\n" +
+                "Attempting to ignore him, you shrugged it off and tried to continue walking down\n" +
+                "the street, but a sharp pain  greets your neck, and before you  can process what\n" +
+                "even  happened,  your world started  to go blurry. Now you’re here, laying on an\n" +
+                "unknown floor. You sit up and begin to look around.\n" +
+                "\n" +
+                "You appear to be in a living room. The room is warmly illuminated by a fireplace\n" +
+                "set in  the corner, crackling away with   small  pops as the  wood inside burns.\n" +
+                "Glancing  around, you see a brown leather couch with  a small glass coffee table\n" +
+                "in  front of  it, a  decorative  pot  filled with small cactus on  top  of it. A\n" +
+                "bearskin rug sits in front of that,  serving   as a centerpiece for  the room. A\n" +
+                "grandfather clock softly clicks against the wall next to an opened door, showing\n" +
+                "a  dining area in the next room over. You notice  the windows  next to the front\n" +
+                "door are boarded up tight with   strong boards, and no light  is shining through\n" +
+                "the cracks, suggesting it's  night outside of the house. Against another wall is\n" +
+                "a  bookshelf,  with regular wall shelving on  each  side of it. The bookshelf is\n" +
+                "full  of books, and the  shelves are  lined  with trinkets  and  picture frames.\n" +
+                "Besides the bookshelf is a door, leading to what appears to be a master bedroom.\n" +
+                "\n" +
+                "Use 'HELP' for a list of commands.\n";
+        return message;
     }
 
     /**
