@@ -24,7 +24,19 @@ public class Basement implements RoomTemplate
     @Override
     public void roomDescription()
     {
-        System.out.println("");
+        System.out.println("Clicking the flashlight  on, you use it to  look down the steps. Before you is a\n" +
+                "mud floor, but nothing else is visible from the   top  of the steps.  You take a\n" +
+                "brief  deep breath and cautiously   place one foot after another   on each step,\n" +
+                "trying  to ease  your weight  onto the flimsy boards and remain light as can be.\n" +
+                "Once you reach the bottom, you glance  around. It’s a typical old basement, with\n" +
+                "pipes  running along the walls  before going   up  into the  ceiling  at various\n" +
+                "places. In the corner rests a  stack of cut wood, undoubtedly  for the fireplace\n" +
+                "above.  A few  feet from  the stack  sits   a larger log, with  a rustic looking\n" +
+                "splitting  axe lodged in the top.  The  only way in  and out  appears  to be the\n" +
+                "stairs  to  the kitchen you  came down,   with  no doors nor  high up foundation\n" +
+                "windows to be seen.\n" +
+                "\n" +
+                "Use 'HELP' for a list of commands.");
     }
 
     // Method returns the room items list

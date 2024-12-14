@@ -20,7 +20,16 @@ public class MasterBedroom implements RoomTemplate
     @Override
     public void roomDescription()
     {
-        System.out.println("");
+        System.out.println("Walking into  the master bedroom, a  sense   of warmth and coziness  greets you.\n" +
+                "Given normal circumstances, this would be a nice room to  call your own. A large\n" +
+                "king  size bed sits against the wall, taking up the middle of  the room. Against\n" +
+                "one side of the bed sits a   dark oak nightstand, and on the  other sits an open\n" +
+                "door,  leading into  a master  bathroom. In a corner of the room sits a matching\n" +
+                "dark oak dresser, with a large mirror on top  of  it. In front of the bed sits a\n" +
+                "shag rug, looking old and worn down. The soft popping from the  fireplace can be\n" +
+                "heard through the door leading to the living room.\n" +
+                "\n" +
+                "Use 'HELP' for a list of commands");
     }
 
     // Method returns the room items list
