@@ -13,19 +13,27 @@ public class EscapeEngine {
      final static Logger log = LogManager.getLogger(EscapeRoomGame.class.getName());
      static Scanner UserInput = new Scanner(System.in);
 
+
     public void run() {
         //Parser
         VerbNounParser UserInputHandler = new VerbNounParser();
+
+        // Location string created, used to track players location
+        // Defaults to living room when first ran because that's where player begins
+        String location = "livingroom";
 
         //Inventory (temp)
         List<Items> Inventory = new ArrayList<>();
 
         //Variable to make sure loop quits
         boolean running = true;
+
         // Creating objects
         LivingRoom livingRoom = new LivingRoom();
+
         //Creating key (check and use methods can be tested)
         Key key1 = new Key(1, "This isn't a normal key", "Yellow Key");
+
         //Putting it in bearskin rug
         BearRug bearRug = new BearRug();
 
@@ -35,7 +43,7 @@ public class EscapeEngine {
             String GivenData = UserInput.nextLine();
 
             //Processing commands
-            UserInputHandler.Parse(GivenData);
+            location = UserInputHandler.Parse(GivenData, location);
 
             //Exitting if necessary
             if (GivenData.equalsIgnoreCase("exit")) {

@@ -20,7 +20,17 @@ public class Closet implements RoomTemplate
     @Override
     public void roomDescription()
     {
-        System.out.println("");
+        System.out.println("Entering the  closet, you flick on the   light  switch and wait,  the light bulb\n" +
+                "taking a moment before flickering to life and illuminating  the room with a soft\n" +
+                "warm  glow, similar to  the   light the chandelier produces in   the dining room\n" +
+                "behind you. Upon looking around, you see it’s very cramped and claustrophobic in\n" +
+                "here,  with  a faint smell of moth balls greeting your nose. There’s fancy dress\n" +
+                "clothing for both male and female  figures   hanging  along the rack,  taking up\n" +
+                "every   wire hanger  in the  room   besides one on the far end.   Outside of the\n" +
+                "clothing though, the room is  pretty   barren,  disappointing you  slightly. The\n" +
+                "floor is clear of anything, just plain wooden boards slowly starting to warp.\n" +
+                "\n" +
+                "Use 'HELP' for a list of commands.");
     }
 
     // Method returns the room items list
