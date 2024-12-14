@@ -21,22 +21,21 @@ public class LivingRoom implements RoomTemplate{
     public void roomDescription()
     {
         //Example
-        System.out.println("You walk into a cozy living room, the wood floorboards " +
-                "thumping with each step under your feet. The room is warmly illuminated " +
-                "by a fireplace set in the corner, crackling away with small pops as the wood " +
-                "inside burns. Glancing around, you see a brown leather couch with a small " +
-                "glass coffee table in front of it, a decorative pot filled with small cactus " +
-                "on top of it. A bearskin rug sits in front of that, serving as a centerpiece " +
-                "for the room. A grandfather clock softly clicks against the wall next to an " +
-                "opened door, showing a dining area in the next room over. You notice the " +
-                "windows next to the front door are boarded up tight with strong boards, and " +
-                "no light is shining through the cracks, suggesting it's night outside of the " +
-                "house. Against another wall is a bookshelf, with regular wall shelving on each " +
-                "side of it. The bookshelf is full of books, and the shelves are lined with " +
-                "trinkets and picture frames. Besides the bookshelf is a door, leading to what " +
-                "appears to be a master bedroom." +
-                " " +
-                "Use 'HELP' command for commands");
+        System.out.println("You walk  into a cozy living room,  the wood floorboards thumping with each step\n" +
+                "under  your feet. The room is  warmly  illuminated  by  a fireplace   set in the\n" +
+                "corner,  crackling  away with  small  pops  as  the wood  inside burns. Glancing\n" +
+                "around, you see a brown leather couch with  a small glass coffee  table in front\n" +
+                "of  it, a decorative pot filled with small cactus on  top of  it. A bearskin rug\n" +
+                "sits  in front of that,  serving   as a centerpiece for the  room. A grandfather\n" +
+                "clock softly  clicks against the wall next  to  an opened door, showing a dining\n" +
+                "area in the next room over. You notice the  windows  next to the  front door are\n" +
+                "boarded up tight with strong boards, and no light is shining through the cracks,\n" +
+                "suggesting it's night outside of the house. Against another wall is a bookshelf,\n" +
+                "with  regular wall shelving on each side of it. The bookshelf is  full of books,\n" +
+                "and  the  shelves are  lined   with  trinkets  and picture  frames.  Besides the\n" +
+                "bookshelf is a door, leading to what appears to be a master bedroom.\n" +
+                "\n" +
+                "Use 'HELP' for a list of commands.");
     }
 
     // Method returns the room items list

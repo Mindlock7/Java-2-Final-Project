@@ -3,6 +3,10 @@ import java.util.List;
 
 public class Basement implements RoomTemplate
 {
+    private boolean isLocked = true; // The basement starts locked
+
+    private boolean isDark = true; // Requires player to have flashlight
+
     // Stores room connections
     List<String> connections = new ArrayList<>();
 
@@ -36,5 +40,25 @@ public class Basement implements RoomTemplate
     public void roomInteractables()
     {
         // Insert interactables here...
+    }
+
+    public boolean isLocked() {
+        return isLocked;
+    }
+
+    // Unlocks the basement
+    public void unlock() {
+        isLocked = false;
+        System.out.println("You unlocked the basement!");
+    }
+
+    public boolean isDark() {
+        return isDark;
+    }
+
+    // Unlocks the basement
+    public void useLight() {
+        isDark = false;
+        System.out.println("You illuminate the basement with your flashlight.");
     }
 }
