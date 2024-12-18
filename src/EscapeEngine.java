@@ -49,7 +49,7 @@ public class EscapeEngine {
             // Depending on what was returned, chooses a course of action
             // If "take" was returned, runs the taking command
             if (returnedValue.equals("take")){
-                Item result = UserInputHandler.parseTake(GivenData, location, isTakenInv);
+                Item result = UserInputHandler.parseTake(GivenData, location, isTakenInv, isUsedInv);
 
                 // Creates dud, same item that would be created if item can't be taken
                 // If result and dud match, doesn't add result to the inventories

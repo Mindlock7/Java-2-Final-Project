@@ -50,7 +50,7 @@ public class VerbNounParser {
         }
     }
 
-    public Item parseTake(String data, String location, Inventory taken){
+    public Item parseTake(String data, String location, Inventory taken, Inventory used){
 
         // Splitting the data string from user
         String[] DataSplit = data.split(" ");
@@ -69,7 +69,7 @@ public class VerbNounParser {
         // Inputs the variables into the take method
         // Returns result to engine
         Taking take = new Taking();
-        Item result = take.takeItem(location, noun, taken);
+        Item result = take.takeItem(location, noun, taken, used);
         return result;
     }
 }
