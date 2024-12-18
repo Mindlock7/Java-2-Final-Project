@@ -22,14 +22,21 @@ public class EscapeEngine {
         // Defaults to living room when first ran because that's where player begins
         String location = "livingroom";
 
-        //Inventory (temp)
-        List<Items> Inventory = new ArrayList<>();
+        // Creation of player inventory
+        Inventory inv = new Inventory();
+
+        // Creation of "isUsedInv" which is an inventory
+        // used to verify if an item has been used before or not.
+        // Useful for knowing when to unlock something
+        Inventory isUsedInv = new Inventory();
+
+        // Creation of "isTakenInv" which is an inventory
+        // used to verify if an item has been taken before or not.
+        // Useful for preventing item duplication in the taken class
+        Inventory isTakenInv = new Inventory();
 
         //Variable to make sure loop quits
         boolean running = true;
-
-        // Creating objects
-        LivingRoom livingRoom = new LivingRoom();
 
         //Creating key (check and use methods can be tested)
         Key key1 = new Key(1, "This isn't a normal key", "Yellow Key");
@@ -43,7 +50,30 @@ public class EscapeEngine {
             String GivenData = UserInput.nextLine();
 
             //Processing commands
-            location = UserInputHandler.Parse(GivenData, location);
+            String returnedValue = UserInputHandler.Parse(GivenData, location, inv, isUsedInv, isTakenInv);
+
+            // Depending on what was returned, chooses a course of action
+            // If "take" was returned, runs the taking command
+            if (returnedValue.equals("take")){
+                Item result = UserInputHandler.parseTake(GivenData, location, isTakenInv);
+
+                // Creates dud, same item that would be created if item can't be taken
+                // If result and dud match, doesn't add result to the inventories
+                // If it does not, adds result
+                Item dud = new Item("dud","item didn't exist");
+                if (result.equals(dud)){
+                    // Nothing happens
+                }
+                else{
+                    inv.addItem(result);
+                    isTakenInv.addItem(result);
+                }
+            }
+
+            // If returned value isnt a take, its confirmed to be a location
+            else{
+                location = returnedValue;
+            }
 
             //Exitting if necessary
             if (GivenData.equalsIgnoreCase("exit")) {

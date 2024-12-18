@@ -26,4 +26,14 @@ public class Item {
     public String toString() {
         return name + ": " + description;
     }
+
+    // Command to see if two items are the same or not
+    public boolean equals(Item otherItem){
+        if (this.name.equalsIgnoreCase(otherItem.name) && this.description.equalsIgnoreCase(otherItem.description)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
