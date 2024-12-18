@@ -26,10 +26,10 @@ public class VerbNounParser {
 
             case "use":
                 if (noun.equals("axe")) {
-                    return "use axe"; // Passes "use axe" to EscapeEngine for win condition
+                    return "use axe"; // Ensures the exact return value for "use axe"
                 } else {
                     System.out.println("You can't use that here.");
-                    return location;
+                    return location; // Keeps the player in the current room
                 }
 
             case "look":

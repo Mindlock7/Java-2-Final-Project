@@ -33,32 +33,50 @@ public class EscapeEngine {
             System.out.println("\nWhat would you like to do?");
             String GivenData = UserInput.nextLine();
 
-            // Win condition: Use axe in the living room
-            if (GivenData.equalsIgnoreCase("use axe") && location.equals("livingroom") && inv.contains("SplittingAxe")) {
-                System.out.println("You swing the axe and break down the door! You escape!");
-                running = false; // Ends the game
-                break;
+            // Handle "use" commands and win condition
+            if (GivenData.startsWith("use")) {
+                String[] parts = GivenData.split(" ");
+                if (parts.length > 1) {
+                    String itemToUse = parts[1];
+
+                    // Check for win condition (using axe in living room)
+                    if (itemToUse.equalsIgnoreCase("axe") && location.equals("livingroom") && inv.contains("SplittingAxe")) {
+                        System.out.println("You swing the axe and break down the door! You escape!");
+                        running = false; // Ends the game
+                        break;
+                    }
+
+                    // Additional use logic (e.g., flashlight, key)
+                    else {
+                        Use useHandler = new Use();
+                        useHandler.attemptUse(itemToUse, location, inv, isUsedInv);
+                    }
+                } else {
+                    System.out.println("Specify what you want to use.");
+                }
             }
 
             // Process other commands using VerbNounParser
-            String returnedValue = UserInputHandler.Parse(GivenData, location, inv, isUsedInv, isTakenInv);
+            else {
+                String returnedValue = UserInputHandler.Parse(GivenData, location, inv, isUsedInv, isTakenInv);
 
-            // Check for "take" command
-            if (returnedValue.equals("take")) {
-                Item result = UserInputHandler.parseTake(GivenData, location, isTakenInv);
-                Item dud = new Item("dud", "item didn't exist");
-                if (!result.equals(dud)) {
-                    inv.addItem(result);
-                    isTakenInv.addItem(result);
+                // Check for "take" command
+                if (returnedValue.equals("take")) {
+                    Item result = UserInputHandler.parseTake(GivenData, location, isTakenInv);
+                    Item dud = new Item("dud", "item didn't exist");
+                    if (!result.equals(dud)) {
+                        inv.addItem(result);
+                        isTakenInv.addItem(result);
+                    }
+                } else {
+                    location = returnedValue;
                 }
-            } else {
-                location = returnedValue;
-            }
 
-            // Exit command
-            if (GivenData.equalsIgnoreCase("exit")) {
-                log.debug("Shutting Down!");
-                running = false;
+                // Exit command
+                if (GivenData.equalsIgnoreCase("exit")) {
+                    log.debug("Shutting Down!");
+                    running = false;
+                }
             }
         }
 
