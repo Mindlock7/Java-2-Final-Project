@@ -8,6 +8,13 @@ public class Inventory {
         this.items = new ArrayList<>();
     }
 
+    // Method to save time having to add help hint
+    // after all text manually
+    public void helptext() {
+        System.out.println("\n" +
+                "Use 'HELP' for a list of commands.");
+    }
+
     // Add an item to the inventory
     public void addItem(Item item) {
         items.add(item);
@@ -38,12 +45,14 @@ public class Inventory {
     public void displayInventory() {
         if (items.isEmpty()) {
             System.out.println("Your inventory is empty.");
+            helptext();
         }
         else {
             System.out.println("Inventory:");
             for (Item item : items) {
                 System.out.println(item);
             }
+            helptext();
         }
     }
 }

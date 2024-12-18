@@ -1,5 +1,12 @@
 public class Taking {
 
+    // Method to save time having to add help hint
+    // after all text manually
+    public void helptext() {
+        System.out.println("\n" +
+                "Use 'HELP' for a list of commands.");
+    }
+
     // Creating a "takeItem" method to create an item
     // and place it in 2 inventories: the players and the 'taken'
     // inventory. Players inventory will be changeable, the taken
@@ -25,21 +32,27 @@ public class Taking {
                     // had this item, and will not give it to them again
                     if (taken.contains("RugKey")){
                         System.out.println("You've already taken this item.");
+                        helptext();
                         return dud;
                     }
                     else{
                         System.out.println("RugKey added to inventory.");
+                        helptext();
                         return RugKey;
                     }
                 }
                 else{
-                    // Player was in a room where item couldn't be taken
+                    // Player input not found in room as item
                     // Returns dud to add no item to inventory
+                    System.out.println("Item not found.");
+                    helptext();
                     return dud;
                 }
 
             // Location doesn't have an item in it
             default:
+                System.out.println("Item not found.");
+                helptext();
                 return dud;
         }
     }
