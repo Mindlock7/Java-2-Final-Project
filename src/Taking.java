@@ -50,20 +50,32 @@ public class Taking {
             case "diningroom":
                 // If user input is the word "key", creates an item
                 if (noun.equals("key")){
-                    Item DiningKey = new Item("DiningKey", "Key found in  the china hutch of the  dining  room. Appears to be for a door of\n" +
-                            "some sort.");
 
-                    // If item is in taken already, means the user has already
-                    // had this item, and will not give it to them again
-                    if (taken.contains("DiningKey")){
-                        System.out.println("You've already taken this item.");
-                        helptext();
-                        return dud;
+                    //Ensures china hutch was unlocked before taking
+                    if (used.contains("SmallNote")){
+                        Item DiningKey = new Item("DiningKey", "Key found in  the china hutch of the  dining  room. Appears to be for a door of\n" +
+                                "some sort.");
+
+                        // If item is in taken already, means the user has already
+                        // had this item, and will not give it to them again
+                        if (taken.contains("DiningKey")){
+                            System.out.println("You've already taken this item.");
+                            helptext();
+                            return dud;
+                        }
+                        else{
+                            System.out.println("DiningKey added to inventory.");
+                            helptext();
+                            return DiningKey;
+                        }
                     }
                     else{
-                        System.out.println("DiningKey added to inventory.");
+                        // Player input not found in room as item
+                        // (prereq's weren't met)
+                        // Returns dud to add no item to inventory
+                        System.out.println("Item not found.");
                         helptext();
-                        return DiningKey;
+                        return dud;
                     }
                 }
                 else{
@@ -77,20 +89,32 @@ public class Taking {
             case "kitchen":
                 // If user input is the word "saw", creates an item
                 if (noun.equals("saw")||noun.equals("flimsysaw")||noun.equals("flimsy")){
-                    Item FlimsySaw = new Item("FlimsySaw", "A saw found in the kitchen fridge. Looks way too flimsy for anything serious. It\n" +
-                            "cant do anything more than a board or two.");
 
-                    // If item is in taken already, means the user has already
-                    // had this item, and will not give it to them again
-                    if (taken.contains("FlimsySaw")){
-                        System.out.println("You've already taken this item.");
-                        helptext();
-                        return dud;
+                    // Ensuring button was pressed to open fridge
+                    if (used.contains("WireHanger")){
+                        Item FlimsySaw = new Item("FlimsySaw", "A saw found in the kitchen fridge. Looks way too flimsy for anything serious. It\n" +
+                                "cant do anything more than a board or two.");
+
+                        // If item is in taken already, means the user has already
+                        // had this item, and will not give it to them again
+                        if (taken.contains("FlimsySaw")){
+                            System.out.println("You've already taken this item.");
+                            helptext();
+                            return dud;
+                        }
+                        else{
+                            System.out.println("FlimsySaw added to inventory.");
+                            helptext();
+                            return FlimsySaw;
+                        }
                     }
                     else{
-                        System.out.println("FlimsySaw added to inventory.");
+                        // Player input not found in room as item
+                        // (prereq's weren't met)
+                        // Returns dud to add no item to inventory
+                        System.out.println("Item not found.");
                         helptext();
-                        return FlimsySaw;
+                        return dud;
                     }
                 }
                 else{
@@ -104,20 +128,32 @@ public class Taking {
             case "masterbedroom":
                 // If user input is the word "flashlight", creates an item
                 if (noun.equals("flashlight")){
-                    Item Flashlight = new Item("Flashlight", "A typical  flashlight, found in the  master  bedroom's nightstand. It works, and\n" +
-                            "seems to have a large battery.");
 
-                    // If item is in taken already, means the user has already
-                    // had this item, and will not give it to them again
-                    if (taken.contains("Flashlight")){
-                        System.out.println("You've already taken this item.");
-                        helptext();
-                        return dud;
+                    // Ensures the nightstand was unlocked before taking
+                    if (used.contains("BearKey")){
+                        Item Flashlight = new Item("Flashlight", "A typical  flashlight, found in the  master  bedroom's nightstand. It works, and\n" +
+                                "seems to have a large battery.");
+
+                        // If item is in taken already, means the user has already
+                        // had this item, and will not give it to them again
+                        if (taken.contains("Flashlight")){
+                            System.out.println("You've already taken this item.");
+                            helptext();
+                            return dud;
+                        }
+                        else{
+                            System.out.println("Flashlight added to inventory.");
+                            helptext();
+                            return Flashlight;
+                        }
                     }
                     else{
-                        System.out.println("Flashlight added to inventory.");
+                        // Player input not found in room as item
+                        // (prereq's weren't met)
+                        // Returns dud to add no item to inventory
+                        System.out.println("Item not found.");
                         helptext();
-                        return Flashlight;
+                        return dud;
                     }
                 }
                 else{

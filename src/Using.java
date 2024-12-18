@@ -103,6 +103,124 @@ public class Using {
                     return NoAction;
                 }
 
+            case "wirehanger":
+
+                // Confirms that they have the hanger and they're in the right room
+                if (inv.contains("WireHanger")){
+                    if (location.equals("bathroom")){
+                        System.out.println("You quickly undo  the hanger to get a  long  piece of wire and  start fishing it\n" +
+                                "down into the vent. While it takes you a little while to get, you eventually get\n" +
+                                "the wire to press down on the button,  rewarding you with a satisfying click and\n" +
+                                "nothing  after. You half wonder if you just wasted your  time, but a part of you\n" +
+                                "stays hopeful that something somewhere happened.");
+
+                        // Creates duplicate of item and returns it
+                        // Tells command outside to remove it from inv and add to used
+                        Item WireHanger = new Item("WireHanger", "A wirehanger  from the closet. Very flimsy and easily bendable, it can likely be\n" +
+                                "used to reach things in small spaces your fingers can't.");
+                        return WireHanger;
+                    }
+                    else{
+                        System.out.println("Item cannot be used here.");
+                        return NoAction;
+                    }
+                }
+                else{
+                    System.out.println("Item not found in inventory");
+                    return NoAction;
+                }
+
+            case "smallnote":
+
+                // Confirms that they have the note and they're in the right room
+                if (inv.contains("SmallNote")){
+                    if (location.equals("diningroom")){
+                        System.out.println("The lock on  the china hutch pops open  after you look at the note and enter the\n" +
+                                "birthday into the padlock, allowing you to open  the cabinet. Inside is an empty\n" +
+                                "gift bag and some printer paper, but on top  of  the printer paper  rests a key,\n" +
+                                "looking like one to a door of some sort.");
+
+                        // Creates duplicate of item and returns it
+                        // Tells command outside to remove it from inv and add to used
+                        Item SmallNote = new Item("SmallNote", "A small  note you found attached to  the master bedroom bathroom's mirror. Has a\n" +
+                                "birthday on it, but you're unsure of what  those 4 numbers written could be used\n" +
+                                "for.");
+                        return SmallNote;
+                    }
+                    else{
+                        System.out.println("Item cannot be used here.");
+                        return NoAction;
+                    }
+                }
+                else{
+                    System.out.println("Item not found in inventory");
+                    return NoAction;
+                }
+
+            case "flimsysaw":
+
+                // Confirms that they have the saw and they're in the right room
+                if (inv.contains("FlimsySaw")){
+                    if (location.equals("kitchen")){
+                        System.out.println("You grab the  flimsy saw, hoping that it can at least cut through this one board\n" +
+                                "holding the door closed without falling  apart.  You saw and saw, and eventually\n" +
+                                "get through the board. When you go to pull the saw out though, the blade snaps.");
+
+                        //Guides the player a bit about how to progress
+                        if (!used.contains("DiningKey")){
+                            System.out.println("The door's knob is still locked.");
+                        }
+                        else if (used.contains("DiningKey")){
+                            System.out.println("The basement is now accessible.");
+                        }
+
+                        // Creates duplicate of item and returns it
+                        // Tells command outside to remove it from inv and add to used
+                        Item FlimsySaw = new Item("FlimsySaw", "A saw found in the kitchen fridge. Looks way too flimsy for anything serious. It\n" +
+                                "cant do anything more than a board or two.");
+                        return FlimsySaw;
+                    }
+                    else{
+                        System.out.println("Item cannot be used here.");
+                        return NoAction;
+                    }
+                }
+                else{
+                    System.out.println("Item not found in inventory");
+                    return NoAction;
+                }
+
+            case "splittingaxe":
+                // Confirms that they have the axe and they're in the right room
+                if (inv.contains("SplittingAxe")){
+                    if (location.equals("livingroom")){
+                        System.out.println("You use the axe and hack away at the front door, the heay oak splitting more and\n" +
+                                "more with  each chop, the  iron   reinforcements  struggling to  hold everything\n" +
+                                "together.  Eventually, with enough time   and effort, you break   down the door,\n" +
+                                "leaving  shards  of wood and  iron everywhere.  You throw down the axe and catch\n" +
+                                "your breath as you study the outside. You're in the woods, in the dark, the full\n" +
+                                "moon  barely providing enough light  to see   the  outlines of   the  trees. The\n" +
+                                "fireplace inside provides enough light to  see a dusty dirt path before you. You\n" +
+                                "take  a few more  deep breaths and prepare yourself, knowing anything can happen\n" +
+                                "once you  leave that door. You gather  yourself,  count down from  three in your\n" +
+                                "head, and take off, sprinting down the path.");
+
+                        // Creates duplicate of item and returns it
+                        // Tells command outside to remove it from inv and add to used
+                        Item SplittingAxe = new Item("SplittingAxe", "A large  splitting axe found in the  basement.  Would work perfect as a more\n" +
+                                "destructive key for the front door.");
+                        return SplittingAxe;
+                    }
+                    else{
+                        System.out.println("Item cannot be used here.");
+                        return NoAction;
+                    }
+                }
+                else{
+                    System.out.println("Item not found in inventory");
+                    return NoAction;
+                }
+
             default:
                 // User input can't be correlated to an item
                 System.out.println("Item not found in inventory");
