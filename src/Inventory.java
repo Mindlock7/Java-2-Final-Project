@@ -11,7 +11,6 @@ public class Inventory {
     // Add an item to the inventory
     public void addItem(Item item) {
         items.add(item);
-        System.out.println(item.getName() + " has been added to your inventory.");
     }
 
     // Remove an item from the inventory by name
@@ -25,11 +24,22 @@ public class Inventory {
         return false;
     }
 
+    // Checks to see if incoming item already exists in inventory
+    public boolean contains(String itemName){
+        for (Item item : items) {
+            if (item.getName().equalsIgnoreCase(itemName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     // Display all items in the inventory
     public void displayInventory() {
         if (items.isEmpty()) {
             System.out.println("Your inventory is empty.");
-        } else {
+        }
+        else {
             System.out.println("Inventory:");
             for (Item item : items) {
                 System.out.println(item);

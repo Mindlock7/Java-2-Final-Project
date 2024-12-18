@@ -1,14 +1,21 @@
 public class VerbNounParser {
 
     //Method for splitting the data and checking its result
-    public String Parse(String data, String location) {
+    public String Parse(String data, String location, Inventory inv, Inventory used, Inventory taken) {
+        // Spliting the data string from user
         String[] DataSplit = data.split(" ");
 
         // Grabs first piece of input (verb)
         String action = DataSplit[0].toLowerCase();
 
         // Prepares second piece of input (noun)
-        String noun = DataSplit[1].toLowerCase();
+        String noun;
+        try {
+            noun = DataSplit[1].toLowerCase();
+        }
+        catch(ArrayIndexOutOfBoundsException _){
+            noun = "";
+        }
 
         // Searches to see what command user wants to do using verb
         switch (action) {
@@ -18,8 +25,7 @@ public class VerbNounParser {
                 return location;
 
             case "take":
-                System.out.println("Today is Sunday");
-                return location;
+                return "take";
 
             case "help":
                 System.out.println("The commands for the game:\n" +
@@ -30,15 +36,33 @@ public class VerbNounParser {
                 return location;
 
             case "look":
-                System.out.println("Today is Sunday");
+                Looking look = new Looking();
+                look.lookat(noun, location);
                 return location;
 
             case "inventory":
+                inv.displayInventory();
                 return location;
 
             default:
                 System.out.println("Command is not recognized. Please try again.");
                 return location;
         }
+    }
+
+    public Item parseTake(String data, String location, Inventory taken){
+
+        // Splitting the data string from user
+        String[] DataSplit = data.split(" ");
+
+        // Prepares second piece of input (noun)
+        String noun = DataSplit[1].toLowerCase();
+
+        // Creates new instance of Taking class
+        // Inputs the variables into the take method
+        // Returns result to engine
+        Taking take = new Taking();
+        Item result = take.takeItem(location, noun, taken);
+        return result;
     }
 }
