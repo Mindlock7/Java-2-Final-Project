@@ -30,7 +30,8 @@ public class VerbNounParser {
                 return location;
 
             case "look":
-                System.out.println("Today is Sunday");
+                Looking look = new Looking();
+                look.lookat(noun, location);
                 return location;
 
             case "inventory":
