@@ -1,11 +1,10 @@
-//Time Stuff
+// Time Stuff
 import java.time.LocalTime;
 import java.util.Locale;
 
 public class EscapeRoomGame {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         // Initialize the Timer
         Timer timer = Timer.getInstance();
 
@@ -25,7 +24,7 @@ public class EscapeRoomGame {
         engine.run();
 
         // Display elapsed time when the game ends
-        long elapsedTime = timer.getElapsedTime();
-        System.out.println("Elapsed Time: " + elapsedTime + " seconds");
+        String elapsedTime = timer.getElapsedTime(); // Updated to use the new Timer method
+        System.out.println("Elapsed Time: " + elapsedTime);
     }
 }

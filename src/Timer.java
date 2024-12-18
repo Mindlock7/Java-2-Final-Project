@@ -1,12 +1,11 @@
 public class Timer {
     /**
-     * Class that creates a singleton time counter to keep track of gameplay seconds
+     * Class that creates a singleton time counter to keep track of gameplay time in minutes and seconds.
      */
     private static Timer instance;
     private long startTime;
 
     private Timer() {
-
         startTime = System.currentTimeMillis();
     }
 
@@ -21,9 +20,11 @@ public class Timer {
         return instance;
     }
 
-    public long getElapsedTime() {
+    public String getElapsedTime() {
         long elapsedTimeMillis = System.currentTimeMillis() - startTime;
-        return elapsedTimeMillis / 1000; // Convert milliseconds to seconds
+        long totalSeconds = elapsedTimeMillis / 1000; // Convert milliseconds to seconds
+        long minutes = totalSeconds / 60; // Calculate minutes
+        long seconds = totalSeconds % 60; // Calculate remaining seconds
+        return String.format("%d minutes and %d seconds", minutes, seconds); // Return formatted string
     }
 }
-
