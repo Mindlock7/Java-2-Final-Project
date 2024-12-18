@@ -68,7 +68,8 @@ public class Looking {
                 else if (noun.equals("bearskinrug")
                         || noun.equals("bearskin")
                         || noun.equals("rug")
-                        || noun.equals("bear")) {
+                        || noun.equals("bear")
+                        || noun.equals("bearrug")) {
                     System.out.println("You look down  at the bearskin rug, feeling like there’s nothing it could do for\n" +
                             "you to get you out of this place, but  as  you’re about to look away,  you see a\n" +
                             "glimmer of light reflect from one of its  teeth. Curious, you bend down and look\n" +
@@ -111,6 +112,7 @@ public class Looking {
                 else{
                     notfound();
                 }
+                break;
 
             case "diningroom":
                 if (noun.equals("table")) {
@@ -142,6 +144,7 @@ public class Looking {
                 else{
                     notfound();
                 }
+                break;
 
             case "kitchen":
                 if (noun.equals("cup")
@@ -208,6 +211,7 @@ public class Looking {
                 else{
                     notfound();
                 }
+                break;
 
             case "masterbedroom":
                 if (noun.equals("bed")) {
@@ -247,6 +251,7 @@ public class Looking {
                 else{
                     notfound();
                 }
+                break;
 
             case "bathroom":
                 if (noun.equals("vent")) {
@@ -287,6 +292,7 @@ public class Looking {
                 else{
                     notfound();
                 }
+                break;
 
             case "masterbedroombathroom":
                 if (noun.equals("postitnote")
@@ -331,6 +337,7 @@ public class Looking {
                 else{
                     notfound();
                 }
+                break;
 
             case "basement":
                 if (noun.equals("piping")) {
@@ -359,6 +366,7 @@ public class Looking {
                 else{
                     notfound();
                 }
+                break;
 
             case "closet":
                 if (noun.equals("clothes")) {
@@ -379,6 +387,7 @@ public class Looking {
                 else{
                     notfound();
                 }
+                break;
         }
     }
 }
