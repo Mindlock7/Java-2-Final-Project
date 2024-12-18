@@ -38,12 +38,6 @@ public class EscapeEngine {
         //Variable to make sure loop quits
         boolean running = true;
 
-        //Creating key (check and use methods can be tested)
-        Key key1 = new Key(1, "This isn't a normal key", "Yellow Key");
-
-        //Putting it in bearskin rug
-        BearRug bearRug = new BearRug();
-
         // Game logic
         while (running) {
             //UserInput
