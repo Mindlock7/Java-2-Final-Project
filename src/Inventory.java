@@ -33,8 +33,8 @@ public class Inventory {
 
     // Checks to see if incoming item already exists in inventory
     public boolean contains(String itemName){
-        for (Item item : items) {
-            if (item.getName().equalsIgnoreCase(itemName)) {
+        for (Item x : items) {
+            if (x.getName().equalsIgnoreCase(itemName)) {
                 return true;
             }
         }

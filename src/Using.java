@@ -11,7 +11,7 @@ public class Using {
     // By using the inv inventory, we can ensure the player has the item
     // By using the used inventory, we can ensure the player hasn't already used
     // a one time use item and is trying to use it again
-    public Item useItem(String location, String noun, Inventory inv, Inventory used) {
+    public Item useItem(String noun, String location, Inventory inv, Inventory used) {
 
         // Creating placeholder item to return when no action should be taken
         Item NoAction = new Item("No","Action");

@@ -130,7 +130,7 @@ public class Taking {
                 if (noun.equals("flashlight")){
 
                     // Ensures the nightstand was unlocked before taking
-                    if (used.contains("BearKey")){
+                    if (used.contains("RugKey")){
                         Item Flashlight = new Item("Flashlight", "A typical  flashlight, found in the  master  bedroom's nightstand. It works, and\n" +
                                 "seems to have a large battery.");
 
