@@ -19,10 +19,10 @@ public class Using {
         // Goes through each item in the game trying to see what one the user
         // wants to use.
         switch (noun) {
-            case "bearkey":
+            case "rugkey":
 
                 // Confirms that they have the key and they're in the right room
-                if (inv.contains("BearKey")){
+                if (inv.contains("RugKey")){
                     if (location.equals("masterbedroom")){
                         System.out.println("You use the  bears key and unlock the  nightstand.  You pull it open and find a\n" +
                                 "flashlight inside.");
