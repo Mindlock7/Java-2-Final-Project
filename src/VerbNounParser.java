@@ -18,19 +18,14 @@ public class VerbNounParser {
         switch (action) {
             case "move":
                 Movement move = new Movement();
-                location = move.attemptMove(noun, location);
+                location = move.attemptMove(noun, location, used);
                 return location;
 
             case "take":
                 return "take";
 
             case "use":
-                if (noun.equals("axe")) {
-                    return "use axe"; // Ensures the exact return value for "use axe"
-                } else {
-                    System.out.println("You can't use that here.");
-                    return location; // Keeps the player in the current room
-                }
+                return "use";
 
             case "look":
                 Looking look = new Looking();
@@ -57,7 +52,7 @@ public class VerbNounParser {
         }
     }
 
-    public Item parseTake(String data, String location, Inventory taken) {
+    public Item parseTake(String data, String location, Inventory taken, Inventory used) {
         String[] DataSplit = data.split(" ");
         String noun;
 
@@ -68,6 +63,20 @@ public class VerbNounParser {
         }
 
         Taking take = new Taking();
-        return take.takeItem(location, noun, taken, new Inventory());
+        return take.takeItem(location, noun, taken, used);
+    }
+
+    public Item parseUse(String data, String location, Inventory inv, Inventory used) {
+        String[] DataSplit = data.split(" ");
+        String noun;
+
+        try {
+            noun = DataSplit[1].toLowerCase();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            noun = "";
+        }
+
+        Using use = new Using();
+        return use.useItem(noun, location, inv, used);
     }
 }

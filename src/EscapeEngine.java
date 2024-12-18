@@ -33,42 +33,35 @@ public class EscapeEngine {
             System.out.println("\nWhat would you like to do?");
             String GivenData = UserInput.nextLine();
 
-            // Handle "use" commands and win condition
-            if (GivenData.startsWith("use")) {
-                String[] parts = GivenData.split(" ");
-                if (parts.length > 1) {
-                    String itemToUse = parts[1];
-
-                    // Check for win condition (using axe in living room)
-                    if (itemToUse.equalsIgnoreCase("axe") && location.equals("livingroom") && inv.contains("SplittingAxe")) {
-                        System.out.println("You swing the axe and break down the door! You escape!");
-                        running = false; // Ends the game
-                        break;
-                    }
-
-                    // Additional use logic (e.g., flashlight, key)
-                    else {
-                        Use useHandler = new Use();
-                        useHandler.attemptUse(itemToUse, location, inv, isUsedInv);
-                    }
-                } else {
-                    System.out.println("Specify what you want to use.");
-                }
-            }
-
             // Process other commands using VerbNounParser
-            else {
                 String returnedValue = UserInputHandler.Parse(GivenData, location, inv, isUsedInv, isTakenInv);
 
                 // Check for "take" command
                 if (returnedValue.equals("take")) {
-                    Item result = UserInputHandler.parseTake(GivenData, location, isTakenInv);
+                    Item result = UserInputHandler.parseTake(GivenData, location, isTakenInv, isUsedInv);
                     Item dud = new Item("dud", "item didn't exist");
                     if (!result.equals(dud)) {
                         inv.addItem(result);
                         isTakenInv.addItem(result);
                     }
-                } else {
+                }
+                else if (returnedValue.equals("use")) {
+                    Item result = UserInputHandler.parseUse(GivenData, location, isTakenInv, isUsedInv);
+                    Item NoAction = new Item("No","Action");
+                    Item Flashlight = new Item("Flashlight", "A typical  flashlight, found in the  master  bedroom's nightstand. It works, and\n" +
+                            "seems to have a large battery.");
+                    Item SplittingAxe = new Item("SplittingAxe", "A large  splitting axe found in the  basement.  Would work perfect as a more\n" +
+                            "destructive key for the front door.");
+                    if (result.equals(SplittingAxe)){
+                        running = false;
+                        System.out.println("You escaped and won the game!");
+                    }
+                    else if (!result.equals(NoAction) && !result.equals(Flashlight)){
+                        inv.removeItem(result.getName());
+                        isUsedInv.addItem(result);
+                    }
+                }
+                else {
                     location = returnedValue;
                 }
 
@@ -77,7 +70,7 @@ public class EscapeEngine {
                     log.debug("Shutting Down!");
                     running = false;
                 }
-            }
+
         }
 
         System.out.println("Game shutting down...");
