@@ -22,7 +22,7 @@
   </Appenders>
   
   <Loggers>
-    <Logger name="LoggingExample" level="debug">
+    <Logger name="Examples.LoggingExample" level="debug">
       <AppenderRef ref="fileLogger" level="debug"/>
     </Logger>
     <Root level="all">
