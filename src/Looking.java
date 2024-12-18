@@ -19,7 +19,7 @@ public class Looking {
 
     // Method that attempts to interpret noun to
     // give more detail about something in the room
-    public void lookat(String noun, String location) {
+    public void lookat(String noun, String location, Inventory used) {
 
         // Using location to know what rooms objects are being viewed
         switch (location) {
@@ -162,15 +162,28 @@ public class Looking {
                     helptext();
                 }
                 else if (noun.equals("fridge")) {
-                    System.out.println("You try pulling  the fridge open, but the door doesn’t want to budge at all. You\n" +
-                            "pull harder, but nothing happens. You look  for  a lock of some kind but there’s\n" +
-                            "nothing  there. Stumped, you look around  on the  fridge, still  finding nothing\n" +
-                            "anywhere. You let your imagination run  wild for a second due to  the pure shock\n" +
-                            "of the fridge not opening,  coming  up with crazy ideas such  as they superglued\n" +
-                            "the  fridge shut, or there’s somehow a really strong vacuum inside, or there’s a\n" +
-                            "really big  magnet pulling on the door,  but  realizing how unlikely all of this\n" +
-                            "is, you continue onwards");
-                    helptext();
+                    if (used.contains("WireHanger")){
+                        System.out.println("The fridge opens with no resistance, and you almost wish it didn’t. Upon looking\n" +
+                                "inside, you see jars upon jars full of random red liquids and pieces of what you\n" +
+                                "hope isn’t  humans. Some jars are labeled,  others aren’t, with some of the more\n" +
+                                "notable ones saying “hearts” and “kidney stones.”  You look further down and see\n" +
+                                "trays  full of an  assortment   of  intestines and  other   insides,  with blood\n" +
+                                "coagulating  around  them. On the bottom  shelf   are  bones, cut up  into weird\n" +
+                                "trinkets  and shapes, as well as large chunks still ripe  for carving. Alongside\n" +
+                                "them is a nearly broken flimsy saw.");
+                        helptext();
+                    }
+                    else{
+                        System.out.println("You try pulling  the fridge open, but the door doesn’t want to budge at all. You\n" +
+                                "pull harder, but nothing happens. You look  for  a lock of some kind but there’s\n" +
+                                "nothing  there. Stumped, you look around  on the  fridge, still  finding nothing\n" +
+                                "anywhere. You let your imagination run  wild for a second due to  the pure shock\n" +
+                                "of the fridge not opening,  coming  up with crazy ideas such  as they superglued\n" +
+                                "the  fridge shut, or there’s somehow a really strong vacuum inside, or there’s a\n" +
+                                "really big  magnet pulling on the door,  but  realizing how unlikely all of this\n" +
+                                "is, you continue onwards");
+                        helptext();
+                    }
                 }
                 else if (noun.equals("metalpetbowls")
                         || noun.equals("petbowls")

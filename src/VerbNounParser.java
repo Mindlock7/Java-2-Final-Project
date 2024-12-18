@@ -29,7 +29,7 @@ public class VerbNounParser {
 
             case "look":
                 Looking look = new Looking();
-                look.lookat(noun, location);
+                look.lookat(noun, location, used);
                 return location;
 
             case "inventory":
