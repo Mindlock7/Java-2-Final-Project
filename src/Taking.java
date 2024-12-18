@@ -8,10 +8,8 @@ public class Taking {
     }
 
     // Creating a "takeItem" method to create an item
-    // and place it in 2 inventories: the players and the 'taken'
-    // inventory. Players inventory will be changeable, the taken
-    // will not be. By doing this we will have a log of what has already
-    // been taken, therefore preventing it from being taken again
+    // By using the taken inventory, we can prevent item dupes
+    // By using the used inventory, we can ensure prereq's for the item were met
     public Item takeItem(String location, String noun, Inventory taken, Inventory used){
 
         // Creates placeholder item "dud"
