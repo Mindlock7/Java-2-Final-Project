@@ -3,7 +3,7 @@ import java.util.Objects;
 public class Movement {
 
     // Method that attempts to interpret noun to move player
-    public String attemptMove(String noun, String location) {
+    public String attemptMove(String noun, String location, Inventory used) {
         switch (noun) {
 
             // If player typed 'livingroom' without a space
@@ -127,18 +127,29 @@ public class Movement {
                     return location;
                 }
                 else{
-                    Basement b = new Basement();
-                    // DOESNT WORK YET
-                    // Would ensure player has key and flashlight
-                    // Will create customized messages once item/inv system is refined
-                    if (b.isLocked() == true && b.isDark() == true){
-                        b.roomDescription();
-                        location = "basement";
-                        return location;
+
+                    //Ensures basement is unlocked before letting them in
+                    if (used.contains("FlimsySaw") && used.contains("DiningKey")){
+                        Basement b = new Basement();
+                        // Ensures player has flashlight before seeing
+                        if (used.contains("Flashlight")){
+                            b.roomDescription();
+                            location = "basement";
+                            return location;
+                        }
+                        else{
+                            b.roomDescNoLight();
+                            location = "basement";
+                            return location;
+                        }
                     }
                     else{
+                        System.out.println("Cannot determine where you would like to go.\n" +
+                                "When typing a room, merge the words together.\n" +
+                                "(Ex: 'masterbedroom', 'masterbedroombathroom').\n");
                         return location;
                     }
+
                 }
 
             default:

@@ -39,6 +39,18 @@ public class Basement implements RoomTemplate
                 "Use 'HELP' for a list of commands.");
     }
 
+    public void roomDescNoLight(){
+        System.out.println("You stare  down into a dark void  from  the kitchen, the  darkness consuming the\n" +
+                "light coming from the kitchen as if  it’s intentionally trying to blind you. The\n" +
+                "most you can see are a few rickety steps against a cracking stone wall. You test\n" +
+                "one   with your foot and  get  a  loud creaking as  a response,  almost  as if a\n" +
+                "warning. You  feel uncomfortable going down there  with  no way to see what’s in\n" +
+                "front of you. You stand at the top  of the  stairs, thinking,  the kitchen being\n" +
+                "right behind you.\n" +
+                "\n" +
+                "Use 'HELP' for a list of commands.");
+    }
+
     // Method returns the room items list
     @Override
     public List<String> roomItems()
