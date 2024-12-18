@@ -56,8 +56,10 @@ public class EscapeEngine {
                         running = false;
                         System.out.println("You escaped and won the game!");
                     }
-                    else if (!result.equals(NoAction) && !result.equals(Flashlight)){
-                        inv.removeItem(result.getName());
+                    else if (!result.equals(NoAction)){
+                        if (!result.equals(Flashlight)){
+                            inv.removeItem(result.getName());
+                        }
                         isUsedInv.addItem(result);
                     }
                 }
