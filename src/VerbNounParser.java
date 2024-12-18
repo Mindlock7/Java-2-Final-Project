@@ -56,7 +56,14 @@ public class VerbNounParser {
         String[] DataSplit = data.split(" ");
 
         // Prepares second piece of input (noun)
-        String noun = DataSplit[1].toLowerCase();
+        String noun = "";
+
+        //Checking if a noun truly exists
+        try {
+            noun = DataSplit[1].toLowerCase();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            noun = "";
+        }
 
         // Creates new instance of Taking class
         // Inputs the variables into the take method

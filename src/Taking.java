@@ -35,6 +35,7 @@ public class Taking {
                 else{
                     // Player was in a room where item couldn't be taken
                     // Returns dud to add no item to inventory
+                    System.out.println("You found nothing? Try using a word or try a different one for better results.");
                     return dud;
                 }
 
